@@ -19,11 +19,25 @@ export default defineConfig({
 
   use: {
     baseURL: "https://coffee-cart.app",
-    trace: "on-first-retry",
+    trace: "retain-on-failure",
+    actionTimeout: 10_000,
+    navigationTimeout: 30_000,
   },
 
-
   projects: [
+    {
+      name: "css",
+      testDir: "./tests/css",
+    },
+
+    {
+      name: "aria",
+      testDir: "./tests/aria",
+      use: {
+        testIdAttribute: "data-test",
+      },
+    },
+
     {
       name: "chromium",
       use: { ...devices["Desktop Chrome"] },

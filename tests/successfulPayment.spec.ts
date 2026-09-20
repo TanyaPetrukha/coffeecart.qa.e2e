@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 
 test(
-  "CC-005 successfull order",
+  "CC-005 successful order",
   { tag: ["@order", "@smoke", "@regression"] },
   async ({ page }) => {
     await page.goto("");
